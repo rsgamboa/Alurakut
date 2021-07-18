@@ -15,12 +15,20 @@ function ProfileSidebar(propriedades) {
 export default function Home() {
   const ProfileSocialGit = 'rsgamboa';
   const profileFriends = [
-    'rsgamboa',
-    'rsgamboa',
-    'rsgamboa',
-    'rsgamboa',
-    'rsgamboa',
-    'rsgamboa',
+    'juunegreiros',
+    'gustavoguanabara',
+    'omariosouto',
+    'glaucodonadellom',
+    'peas',
+    'MariyaSha',
+  ]
+  const profileGroups = [
+    'devbr',
+    'CocoaHeadsBrasil',
+    'backend-br',
+    'devfsa',
+    'react-brasil',
+    'coffee',
   ]
 
   return (
@@ -62,9 +70,23 @@ export default function Home() {
       </ul>
         </ProfileRelationsBoxWrapper>
 
-      <Box>
-      Comunidades
-      </Box>
+      <ProfileRelationsBoxWrapper>
+        <h2 className="smallTitle">
+          Comunidades ({profileGroups.length})
+        </h2>
+        <ul>
+      {profileGroups.map((itemAtual) => {
+        return (
+          <li>
+          <a href={`/users/${itemAtual}`} key={itemAtual}>
+            <img src={`https://github.com/${itemAtual}.png`} />
+            <span>{itemAtual}</span>
+          </a>
+          </li>
+        )
+      })}
+      </ul>
+      </ProfileRelationsBoxWrapper>
     </div>
  </MainGrid>
 
